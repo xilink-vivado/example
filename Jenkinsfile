@@ -6,10 +6,10 @@ pipeline {
       steps {
         deleteDir() // clean up workspace
         checkout([$class: 'GitSCM', branches: [[name: '*/master']],
-          doGenerateSubmoduleConfigurations: true,
+          doGenerateSubmoduleConfigurations: false,
           extensions: [[$class: 'SubmoduleOption',
             disableSubmodules: false,
-            parentCredentials: true,
+            parentCredentials: false,
             recursiveSubmodules: true,
             reference: '',
             trackingSubmodules: true]],
